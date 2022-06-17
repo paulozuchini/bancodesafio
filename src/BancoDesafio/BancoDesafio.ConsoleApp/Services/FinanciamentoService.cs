@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using BancoDesafio.ConsoleApp.Models;
+﻿using BancoDesafio.ConsoleApp.Models;
 using BancoDesafio.ConsoleApp.Services.Interfaces;
 
 namespace BancoDesafio.ConsoleApp.Services
@@ -7,14 +6,10 @@ namespace BancoDesafio.ConsoleApp.Services
     public class FinanciamentoService : IFinanciamentoService
     {
         private BANCODESAFIOContext _context;
-        private readonly IMapper _mapper;
 
-        public FinanciamentoService(
-            BANCODESAFIOContext context,
-            IMapper mapper)
+        public FinanciamentoService(BANCODESAFIOContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
         public IEnumerable<Financiamento> GetAll()
