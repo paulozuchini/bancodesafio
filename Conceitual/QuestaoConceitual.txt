@@ -1,0 +1,51 @@
+ARQUITETURA 
+
+  
+
+3. Questão conceitual, escreva em detalhes ou diagramas como você montaria uma arquitetura para 
+
+o cenário abaixo, informando as tecnologias, arquitetura, e o que mais achar necessário. 
+
+Em tempos de expansão digital, sua empresa foi contratada para desenhar uma arquitetura moderna 
+
+que sustente o crescimento digital e de vários novos canais, e também tenha formas de manter o 
+
+legado funcionando. 
+
+Descreva ou desenhe o que e como você utilizaria para suportar este crescimento, tendo em vista 
+
+que é necessário uma arquitetura que agregue os meios de comunicação com Mainframe, e que 
+
+todos os sistemas web possam se comunicar entre eles sem a reescrita de códigos. 
+
+Todos os sistemas são extremamente críticos e de alta performance, também contando com um 
+
+volume consideravelmente alto de dados sendo transacionados a todo tempo. 
+
+Comente também como você desenharia a solução para implantação deste cenário, visando que 
+
+quanto menor a dependência com áreas de operação para executar a implantação na mão, mais 
+
+produtivo e assertivo será a empresa. 
+
+ 
+
+
+
+Resposta 
+
+ 
+
+Para suportar o crescimento digital, sugiro utilizar uma arquitetura de microserviços, onde cada método/componente teria sua própria responsabilidade, isolado em código, trazendo o mínimo de dependência entre si, de forma que fosse possível sua conteinerização, de modo que habilite sua escalabilidade em nodes, caso necessário. 
+
+Para não haver gargalo entre as aplicações microserviços e o mainframe, como sugestão, seria ideal usar comunicação em forma de fila, de forma que as requisições fossem feitas via o barramento de microserviços e fossem colocados em uma fila, de forma que sua execução fosse dada de acordo com a disponibilidade do mainframe, retornando as execuções de forma assíncrona, de modo a minimizar delay. 
+
+Essa estrutura, idealmente deve ser colocada em nuvem, para permitir resiliência e disponibilidade. 
+
+Essa arquitetura em microserviços se tornaria um barramento, ou seja, uma camada entre as aplicações de front-end (web) e o mainframe. De forma que não seria necessário reescrita do código legado e caso os contratos (do front) forem bem acertados, também não seria necessário reescrita do código do front, obtendo assim, o objetivo desejado de aptidão à expansão digital. 
+
+ 
+
+Paulo Hilton Zuchini Silva 
+
+ 
