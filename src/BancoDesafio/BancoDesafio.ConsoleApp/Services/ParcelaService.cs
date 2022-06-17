@@ -17,18 +17,19 @@ namespace BancoDesafio.ConsoleApp.Services
             return _context.Parcelas;
         }
 
-        public Parcela GetById(Guid id)
+        public Parcela GetById(int id)
         {
             return getParcela(id);
         }
 
-        public void Create(Parcela model)
+        public int Create(Parcela model)
         {
             _context.Parcelas.Add(model);
             _context.SaveChanges();
+            return model.Id;
         }
 
-        public void Update(Guid id, Parcela model)
+        public void Update(int id, Parcela model)
         {
             var parcela = getParcela(id);
 
@@ -38,7 +39,7 @@ namespace BancoDesafio.ConsoleApp.Services
 
         // helper methods
 
-        private Parcela getParcela(Guid id)
+        private Parcela getParcela(int id)
         {
             var parcela = _context.Parcelas.Find(id);
             if (parcela == null) throw new KeyNotFoundException("Parcela not found");

@@ -17,20 +17,22 @@ namespace BancoDesafio.ConsoleApp.Services
             return _context.Financiamentos;
         }
 
-        public Financiamento GetById(Guid id)
+        public Financiamento GetById(int id)
         {
             return getFinanciamento(id);
         }
 
-        public void Create(Financiamento model)
+        public int Create(Financiamento model)
         {
             _context.Financiamentos.Add(model);
             _context.SaveChanges();
+
+            return model.Id;
         }
 
         // helper methods
 
-        private Financiamento getFinanciamento(Guid id)
+        private Financiamento getFinanciamento(int id)
         {
             var financiamento = _context.Financiamentos.Find(id);
             if (financiamento == null) throw new KeyNotFoundException("Financiamento not found");

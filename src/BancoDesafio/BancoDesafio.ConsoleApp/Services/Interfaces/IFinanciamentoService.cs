@@ -5,7 +5,7 @@ namespace BancoDesafio.ConsoleApp.Services.Interfaces
     public interface IFinanciamentoService
     {
         IEnumerable<Financiamento> GetAll();
-        Financiamento GetById(Guid id);
-        void Create(Financiamento financiamento);
+        Financiamento GetById(int id);
+        int Create(Financiamento financiamento);
     }
 }

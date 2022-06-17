@@ -5,9 +5,9 @@ namespace BancoDesafio.ConsoleApp.Services.Interfaces
     public interface IClienteService
     {
         IEnumerable<Cliente> GetAll();
-        Cliente GetById(Guid id);
+        Cliente GetById(int id);
         void Create(Cliente user);
-        void Update(Guid id, Cliente user);
-        void Delete(Guid id);
+        void Update(int id, Cliente user);
+        void Delete(int id);
     }
 }

@@ -17,7 +17,7 @@ namespace BancoDesafio.ConsoleApp.Services
             return _context.Clientes;
         }
 
-        public Cliente GetById(Guid id)
+        public Cliente GetById(int id)
         {
             return getUser(id);
         }
@@ -33,7 +33,7 @@ namespace BancoDesafio.ConsoleApp.Services
             _context.SaveChanges();
         }
 
-        public void Update(Guid id, Cliente model)
+        public void Update(int id, Cliente model)
         {
             var user = getUser(id);
 
@@ -45,7 +45,7 @@ namespace BancoDesafio.ConsoleApp.Services
             _context.SaveChanges();
         }
 
-        public void Delete(Guid id)
+        public void Delete(int id)
         {
             var user = getUser(id);
             _context.Clientes.Remove(user);
@@ -54,7 +54,7 @@ namespace BancoDesafio.ConsoleApp.Services
 
         // helper methods
 
-        private Cliente getUser(Guid id)
+        private Cliente getUser(int id)
         {
             var user = _context.Clientes.Find(id);
             if (user == null) throw new KeyNotFoundException("User not found");

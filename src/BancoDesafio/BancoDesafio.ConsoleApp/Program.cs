@@ -1,6 +1,5 @@
 ﻿using BancoDesafio.ConsoleApp.Models;
 using BancoDesafio.ConsoleApp.Services;
-using System.Globalization;
 
 namespace BancoDesafio.ConsoleApp
 {
@@ -34,6 +33,7 @@ namespace BancoDesafio.ConsoleApp
             Console.WriteLine("1- Listar todos os clientes do estado de SP que tenham mais de 60% das parcelas pagas");
             Console.WriteLine("2- Listar os primeiros 4 clientes que tenham alguma parcela com mais de 05 dias atrasados");
             Console.WriteLine("3- Listar todos os clientes que ja atrasaram em algum momento duas ou mais parcelas em mais de 10 dias e que o valor do financiamento seja maior que R$10.000,00");
+            Console.WriteLine("4- Cadastrar pedido de financiamento");
             Console.WriteLine("Q- Sair");
         }
 
@@ -57,6 +57,9 @@ namespace BancoDesafio.ConsoleApp
                     break;
                 case "3":
                     service.MenuOpcaoTres();
+                    break;
+                case "4":
+                    service.MenuOpcaoQuatro();
                     break;
                 case "Q":
                     Environment.Exit(0);
